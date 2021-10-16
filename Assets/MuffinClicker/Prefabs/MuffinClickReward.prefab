@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1830297683697775922}
   - component: {fileID: 98540300322911503}
   - component: {fileID: 2813547723645897196}
+  - component: {fileID: 8436251053771686216}
   m_Layer: 5
   m_Name: MuffinClickReward
   m_TagString: Untagged
@@ -60,6 +61,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -67,8 +69,7 @@ MonoBehaviour:
   m_text: +2048
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b383af62b7347664e98a63357c87850c, type: 2}
-  m_sharedMaterial: {fileID: -5295590237932550876, guid: b383af62b7347664e98a63357c87850c,
-    type: 2}
+  m_sharedMaterial: {fileID: -5295590237932550876, guid: b383af62b7347664e98a63357c87850c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -134,3 +135,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8436251053771686216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830297683697775921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44927a74ccf0c43468a7bb6224856493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

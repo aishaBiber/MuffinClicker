@@ -7,9 +7,11 @@ using UnityEngine;
 
 public class Muffin : MonoBehaviour
 {
+
+    public GameObject floatingTextPrefab; 
     public TMP_Text MuffinText;
     public int TotalClicks;
-
+    public int pointsPerClick = 1; 
 
     //public RectTransform spinLight = null;
     //public RectTransform spinLight2 = null;
@@ -20,7 +22,7 @@ public class Muffin : MonoBehaviour
 
     private float[] spinLightSpeeds; 
 
-
+   
 
     
 
@@ -74,10 +76,36 @@ public class Muffin : MonoBehaviour
     public void OnMuffinClicked()
     {
 
-        TotalClicks = TotalClicks + 1;
+        TotalClicks = TotalClicks + pointsPerClick; 
         UpdateUI(); 
         Debug.Log(TotalClicks);
 
         //MuffinText.text = TotalClicks.ToString() + " muffins";
+
+        CreateFloatingText("+" + pointsPerClick.ToString()); 
+    }
+
+    private void CreateFloatingText(string message)
+    {
+        //Spawn a new floating text prefab 
+        GameObject newFloatingText = Instantiate(floatingTextPrefab, transform);
+        //Generate a random position around the muffin 
+        Vector3 pos = GetRandomPosAroundMuffin();
+
+        //Position the new floating text at the random position 
+        newFloatingText.transform.localPosition = pos;
+
+        //Set the floating actual text property of the float text prefab 
+        TMP_Text floatingTextComp = newFloatingText.GetComponent<TMP_Text>();
+        floatingTextComp.text = message; 
+
+    }
+
+    private Vector3 GetRandomPosAroundMuffin()
+    {
+        float x = Random.Range(-200f, 200f);
+        float y = Random.Range(50f, 225f);
+
+        return new Vector3(x, y);
     }
 }
